@@ -20,7 +20,7 @@ const NextPreviouse = () => {
           classname="icon"
         />
       </span>
-      {number}/75
+      {number}/25
       <span
         onClick={() => {
           dispatch(setNext());

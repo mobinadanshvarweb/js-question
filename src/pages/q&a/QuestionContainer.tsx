@@ -1,10 +1,11 @@
-import { useState } from "react";
 import { data } from "../../data/q&a";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
+import { setShow } from "../../redux/slice/progress-slice";
 
 const QuestionContainer = () => {
-  const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+  const show = useSelector((state: RootState) => state.progress.show);
   const currentQuestionIndex = useSelector(
     (state: RootState) => state.progress.currentQuestionIndex
   );
@@ -31,7 +32,7 @@ const QuestionContainer = () => {
         </div>
         <button
           onClick={() => {
-            setShow(!show);
+            dispatch(setShow());
           }}
           className="text-[#6B7280] underline"
         >
@@ -41,7 +42,7 @@ const QuestionContainer = () => {
 
       <button
         onClick={() => {
-          setShow(!show);
+          dispatch(setShow());
         }}
         className="text-[#6B7280] underline"
       >
