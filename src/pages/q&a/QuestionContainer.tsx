@@ -11,7 +11,9 @@ const QuestionContainer = () => {
   );
   return (
     <div className="flex flex-col py-5 h-[300px] w-full lg:w-[65%] bg-white border items-center justify-center rounded-lg relative">
-      <div className="text-[#6B7280]">Core . {"Beginner"}</div>
+      <div className="text-[#6B7280]">
+        Core . {data[currentQuestionIndex].core}
+      </div>
       <div className="text-black font-[600] text-2xl text-center flex-1 flex justify-start items-center">
         {data[currentQuestionIndex].question}
       </div>
